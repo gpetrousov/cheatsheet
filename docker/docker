@@ -123,6 +123,9 @@ docker run --rm ...
 #==================>>>> Images cheatsheet     <<<<==================#
 #==================>>>>                       <<<<==================#
 
+###Build image from Dockerfile and tag it (give name)
+docker build . -t graylog # Named the container graylog
+
 ###Remove an image.
 docker rmi
 
