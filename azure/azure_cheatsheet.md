@@ -55,4 +55,4 @@
 	kubectl create -f example-service.yaml
 
 ### Stop/Delete a service
-kubectl --kubeconfig='kubeconfig.<location>.json'  delete service <service_name>
+	kubectl --kubeconfig='kubeconfig.<location>.json'  delete service <service_name>
