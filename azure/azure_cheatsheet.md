@@ -15,8 +15,7 @@
 	az acs list-locations
 
 ### Deploy kube8s cluster
-	 acs-engine deploy --resource-group <RG> --subscription-id `az account list | python -c "import sys, json; print(json.load(sys.stdin)[0]['id'])"` --location <location> auto-suffix --api-mod
-el kubernetes.json
+	 acs-engine deploy --resource-group <RG> --subscription-id `az account list | python -c "import sys, json; print(json.load(sys.stdin)[0]['id'])"` --location <location> auto-suffix --api-model kubernetes.json
 
 ### Get k8s cluster information (using the genrerated tempalte)
 	kubectl --kubeconfig='_output/<RG>/kubeconfig/kubeconfig.<location>.json' cluster-info
