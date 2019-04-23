@@ -108,8 +108,8 @@ docker rm $(docker ps -a -q)
 ###Run container and remove intermediate images.
 docker run --rm ...
 
-
-
+### Remove exited containers
+docker rm -vf $(docker ps -a -f status=exited -q) 2>/dev/null
 
 
 
