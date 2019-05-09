@@ -43,3 +43,20 @@ aws s3api list-buckets
 ```sh
 aws elb describe-load-balancers 
 ```
+
+## ELBv2
+
+  - list all target groups
+
+```sh
+aws elbv2 describe-target-groups 
+```
+
+## ACM
+
+  - list all certificates
+
+```sh
+aws acm list-certificates
+```
+
