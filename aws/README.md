@@ -52,6 +52,21 @@ aws elb describe-load-balancers
 aws elbv2 describe-target-groups 
 ```
 
+  - create a listener rule to redirect to HTTPS and port 443 with status code 301 for *.example.com domain
+
+```sh
+ aws --profile=default --region=us-east-1 elbv2 create-rule --listener-arn arn:aws:elasticloadbalancing:us-east-1:560303188884:listener/app/test-redirect/713af720ce825f1d/5d6ace4ce0e93a57 \\
+ --priority 10 --conditions Field=host-header,Values='*.example.com'  --actions Type=redirect,RedirectConfig='{'Protocol'='HTTPS','Port'='443','StatusCode'='HTTP_301'}'
+ ```
+
+  - modify a listener rule to redirect to HTTPS and port 443 with status code 301
+
+```sh
+ aws --profile=default --region=us-east-1 elbv2 modify-rule \\
+ --rule-arn arn:aws:elasticloadbalancing:us-east-1:560303188884:listener-rule/app/test-redirect/713af720ce825f1d/5d6ace4ce0e93a57/413d44b250c8cad1 \\
+ --actions Type=redirect,RedirectConfig='{'Protocol'='HTTPS','Port'='443','StatusCode'='HTTP_301'}'
+ ```
+
 ## ACM
 
   - list all certificates
