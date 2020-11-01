@@ -14,6 +14,14 @@ aws ecs  list-clusters
 aws ecs list-services --cluster <cluster>
 ```
 
+## EC2
+
+  - describe network interfaces
+
+```sh
+aws ec2 describe-network-interfaces
+```
+
 ## Route53
 
   - list hosted zones
