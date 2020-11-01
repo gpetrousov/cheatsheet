@@ -161,3 +161,24 @@ docker load
 
 ###Compy file to a running container.
 FULL_CONTAINER_ID = $(docker inspect -f '{{.Id}}' $NSM_CONTAINER_NAME) $ sudo cp file.txt /var/lib/docker/aufs/mnt/$(docker inspect -f '{{.Id}}' $NSM_CONTAINER_NAME)/root/file.txt
+
+
+### Difference between CMD and ENTRYPOINT
+
+- Both specify command to execute when running the image
+- `ENTRYPOINT` allows us to pass arguments from CLI when executing the image
+
+```
+docker run my_image arg1 arg2 arg3
+```
+
+- When using both `CMD` and `ENTRYPOINT`
+
+```
+ENTRYPOINT sleep
+
+CMD 8
+
+```
+`CMD`: default value passed to `sleep`
+
